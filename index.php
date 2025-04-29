@@ -26,8 +26,21 @@ $controller=empty($slice[$i+1])?"IndexController":$slice[$i+1]."Controller";
 $method=empty($slice[$i+2])?"Index":$slice[$i+2];
 $params=empty($slice[$i+3])?[]:array_slice($slice,$i+3);
 
-$cont=new $controller();
-$cont->$method($params);
+if (class_exists($controller)) {
+    $con = new $controller();
+
+    if (method_exists($controller, $method)) {
+        $con->$method($params);
+    } else {
+        // Método no existe, redirigir a una ruta por defecto
+        header("Location: " . PATH . "productos");
+        exit;
+    }
+} else {
+    // Controlador no existe, redirigir a una ruta por defecto
+    header("Location: " . PATH . "productos");
+    exit;
+}
 
 
 ?>
