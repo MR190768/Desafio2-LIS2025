@@ -1,0 +1,25 @@
+
+.login-dark {
+  height: 1000px;
+  background-image: url('../img/recursos/headerBack.jpg'),linear-gradient(135deg, #0905ff69 50%, #fd25086b 100%);
+  background-size: cover;
+  background-blend-mode: overlay;
+  position: relative;
+}
+
+.btn-degradado {
+  background: linear-gradient(45deg, #380363, #3110c2); /* Degradado azul a celeste */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.btn-degradado:hover {
+  background: linear-gradient(45deg, #3110c2, #380363); /* Degradado invertido al pasar el mouse */
+}
+  
+  
